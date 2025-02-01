@@ -1,5 +1,9 @@
 ---
 const active = new URL(Astro.request.url).pathname;
+
+function prependBase(href: string) {
+  return `${import.meta.env.BASE_URL}${href}`;
+}
 ---
 
 <div class="menu">
@@ -7,37 +11,49 @@ const active = new URL(Astro.request.url).pathname;
     <ul>
       <li>Writing</li>
       <li>
-        <a href="/animation" class:list={{ active: "/animation" === active }}
+        <a
+          href={prependBase("animation")}
+          class:list={{ active: prependBase("animation") === active }}
           >Animation</a
         >
       </li>
       <li>
         <a
-          href="/illustration"
-          class:list={{ active: "/illustration" === active }}>Illustration</a
+          href={prependBase("illustration")}
+          class:list={{ active: prependBase("illustration") === active }}
+          >Illustration</a
         >
       </li>
       <li>
         <a
-          href="/story-boarding"
-          class:list={{ active: "/story-boarding" === active }}
+          href={prependBase("story-boarding")}
+          class:list={{ active: prependBase("story-boarding") === active }}
           >Story Boarding</a
         >
       </li>
       <li>
-        <a href="/" class:list={{ active: "/" === active }}>Voice-Acting</a>
-      </li>
-      <li>
-        <a href="/about" class:list={{ active: "/about" === active }}>About</a>
-      </li>
-      <li>
-        <a href="/resume" class:list={{ active: "/resume" === active }}
-          >Resume</a
+        <a
+          href={import.meta.env.BASE_URL}
+          class:list={{ active: import.meta.env.BASE_URL === active }}
+          >Voice-Acting</a
         >
       </li>
       <li>
-        <a href="/contact" class:list={{ active: "/contact" === active }}
-          >Contact</a
+        <a
+          href={prependBase("about")}
+          class:list={{ active: prependBase("about") === active }}>About</a
+        >
+      </li>
+      <li>
+        <a
+          href={prependBase("resume")}
+          class:list={{ active: prependBase("resume") === active }}>Resume</a
+        >
+      </li>
+      <li>
+        <a
+          href={prependBase("contact")}
+          class:list={{ active: prependBase("contact") === active }}>Contact</a
         >
       </li>
     </ul>

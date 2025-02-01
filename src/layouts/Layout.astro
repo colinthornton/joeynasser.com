@@ -44,7 +44,9 @@ function getTitle() {
       <Menu />
     </header>
     <div class="canvas">
-      <a href="/" class="logo"><Image src={logo} loading="eager" alt="" /></a>
+      <a href={import.meta.env.BASE_URL} class="logo"
+        ><Image src={logo} loading="eager" alt="" /></a
+      >
       <main>
         <slot />
       </main>
