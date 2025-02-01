@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import "lite-youtube-embed/src/lite-yt-embed.css";
 import logo from "../assets/images/logo.jpg";
 import "../assets/styles/reset.css";
 import Menu from "../components/Menu.astro";
@@ -24,12 +25,19 @@ function getTitle() {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{getTitle()}</title>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Glegoo&display=swap"
       rel="stylesheet"
     />
+
+    <!-- https://github.com/paulirish/lite-youtube-embed -->
+    <script>
+      import "lite-youtube-embed/src/lite-yt-embed.js";
+    </script>
   </head>
   <body>
     <header>
@@ -57,5 +65,9 @@ function getTitle() {
   .logo {
     display: block;
     margin-bottom: 140px;
+  }
+
+  main {
+    margin-bottom: 100px;
   }
 </style>
