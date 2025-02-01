@@ -15,7 +15,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build static files
-        run: npm run build
+        run: BASE_URL=$BASE_URL npm run build
+        env:
+          BASE_URL: /joeynasser.com
       - name: Upload static files as artifact
         uses: actions/upload-pages-artifact@v3
         with:
