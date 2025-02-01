@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import logo from "../assets/images/logo.jpg";
+import "../assets/styles/reset.css";
 import Menu from "../components/Menu.astro";
 import Footer from "../components/Footer.astro";
 
@@ -21,12 +24,38 @@ function getTitle() {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{getTitle()}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Glegoo&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <Menu />
-    <main>
-      <slot />
-    </main>
-    <Footer />
+    <header>
+      <Menu />
+    </header>
+    <div class="canvas">
+      <a href="/" class="logo"><Image src={logo} loading="eager" alt="" /></a>
+      <main>
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>
+
+<style>
+  body {
+    font-family: sans-serif;
+  }
+
+  .canvas {
+    padding: 20px;
+  }
+
+  .logo {
+    display: block;
+    margin-bottom: 140px;
+  }
+</style>

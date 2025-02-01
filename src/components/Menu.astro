@@ -1,12 +1,104 @@
-<nav>
-  <ul>
-    <li>Writing</li>
-    <li><a href="/animation">Animation</a></li>
-    <li><a href="/illustration">Illustration</a></li>
-    <li><a href="/story-boarding">Story Boarding</a></li>
-    <li><a href="/">Voice-Acting</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/resume">Resume</a></li>
-    <li><a href="/contact">Contact</a></li>
-  </ul>
-</nav>
+---
+const active = new URL(Astro.request.url).pathname;
+---
+
+<div class="menu">
+  <nav class="nav">
+    <ul>
+      <li>Writing</li>
+      <li>
+        <a href="/animation" class:list={{ active: "/animation" === active }}
+          >Animation</a
+        >
+      </li>
+      <li>
+        <a
+          href="/illustration"
+          class:list={{ active: "/illustration" === active }}>Illustration</a
+        >
+      </li>
+      <li>
+        <a
+          href="/story-boarding"
+          class:list={{ active: "/story-boarding" === active }}
+          >Story Boarding</a
+        >
+      </li>
+      <li>
+        <a href="/" class:list={{ active: "/" === active }}>Voice-Acting</a>
+      </li>
+      <li>
+        <a href="/about" class:list={{ active: "/about" === active }}>About</a>
+      </li>
+      <li>
+        <a href="/resume" class:list={{ active: "/resume" === active }}
+          >Resume</a
+        >
+      </li>
+      <li>
+        <a href="/contact" class:list={{ active: "/contact" === active }}
+          >Contact</a
+        >
+      </li>
+    </ul>
+  </nav>
+  <label for="menu-toggle">Menu</label>
+  <input id="menu-toggle" type="checkbox" />
+</div>
+<div class="toggle-button-spacer"></div>
+
+<style>
+  .menu {
+    translate: 0 calc(-8lh - 2em);
+    transition: translate ease-in-out 0.5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-flow: column;
+    font-family: "Glegoo";
+    line-height: 2.5em;
+    text-align: center;
+    color: rgba(156, 156, 156);
+  }
+
+  .menu:has(#menu-toggle:checked) {
+    translate: 0;
+  }
+
+  .nav {
+    background: #111111;
+    padding: 1em 0;
+    color: rgba(156, 156, 156, 0.7);
+  }
+
+  .nav ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .nav a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .nav a.active {
+    color: #9c9c9c;
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  #menu-toggle {
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+  }
+
+  .toggle-button-spacer {
+    line-height: 2.5em;
+    height: 1lh;
+  }
+</style>
