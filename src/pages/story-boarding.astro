@@ -1,7 +1,46 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+
+import no1 from "../assets/images/story-boarding/SB_Boards_PG_001_V001.jpg";
+import no2 from "../assets/images/story-boarding/SB_Boards_PG_002_V001.jpg";
+import no3 from "../assets/images/story-boarding/SB_Boards_PG_003_V001.jpg";
+import no4 from "../assets/images/story-boarding/SB_Boards_PG_004_V001.jpg";
+import no5 from "../assets/images/story-boarding/SB_Boards_PG_005_V001.jpg";
+import no6 from "../assets/images/story-boarding/SB_Boards_PG_006_V001.jpg";
+import no7 from "../assets/images/story-boarding/SB_Boards_PG_007_V001.jpg";
+import no8 from "../assets/images/story-boarding/SB_Boards_PG_008_V001.jpg";
+import no9 from "../assets/images/story-boarding/SB_Boards_PG_009_V001.jpg";
+import no10 from "../assets/images/story-boarding/SB_Boards_PG_010_V001.jpg";
+import no11 from "../assets/images/story-boarding/SB_Boards_PG_011_V001.jpg";
+import no12 from "../assets/images/story-boarding/SB_Boards_PG_012_V001.jpg";
+import no13 from "../assets/images/story-boarding/SB_Boards_PG_013_V001.jpg";
 ---
 
 <Layout title="Story Boarding">
-  <h1>Story Boarding</h1>
+  <p>
+    Here's a sequence from an episode of "SpongeBob" I wrote and boarded as a
+    side project.
+  </p>
+  <div class="illustrations">
+    <Image src={no1} alt="" />
+    <Image src={no2} alt="" />
+    <Image src={no3} alt="" />
+    <Image src={no4} alt="" />
+    <Image src={no5} alt="" />
+    <Image src={no6} alt="" />
+    <Image src={no7} alt="" />
+    <Image src={no8} alt="" />
+    <Image src={no9} alt="" />
+    <Image src={no10} alt="" />
+    <Image src={no11} alt="" />
+    <Image src={no12} alt="" />
+    <Image src={no13} alt="" />
+  </div>
 </Layout>
+
+<style>
+  .illustrations {
+    margin-top: 34px;
+  }
+</style>

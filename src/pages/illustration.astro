@@ -1,7 +1,23 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+
+import no1 from "../assets/images/illustration/Cover_V1_002.jpg";
+import no2 from "../assets/images/illustration/Back_Cover_V1_002.jpg";
+import no3 from "../assets/images/illustration/SpaceExploration_V1_002.jpg";
 ---
 
-<Layout title="Illustrations">
-  <h1>Illustration</h1>
+<Layout title="Illustration">
+  <div class="illustrations">
+    <Image src={no1} alt="" />
+    <Image src={no2} alt="" />
+    <Image src={no3} alt="" />
+  </div>
 </Layout>
+
+<style>
+  .illustrations {
+    display: grid;
+    gap: 4px;
+  }
+</style>

@@ -1,0 +1,19 @@
+---
+interface Props {
+  videoids: string[];
+}
+
+const { videoids } = Astro.props;
+---
+
+<div class="videos">
+  {videoids.map((videoid) => <lite-youtube videoid={videoid} />)}
+</div>
+
+<style>
+  .videos {
+    display: grid;
+    padding: 17px 0;
+    gap: 34px;
+  }
+</style>

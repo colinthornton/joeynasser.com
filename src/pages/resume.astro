@@ -1,7 +1,10 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+
+import resume from "../assets/images/JoeyNasser_VoiceActor_Resume_V2_004-01.jpg";
 ---
 
 <Layout title="Resume">
-  <h1>Resume</h1>
+  <Image src={resume} alt="Joey Nasser's resume" />
 </Layout>

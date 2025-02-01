@@ -1,7 +1,38 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+
+import mic from "../assets/images/mic.jpeg";
 ---
 
 <Layout title="About">
-  <h1>About</h1>
+  <Image
+    src={mic}
+    alt="An illustration of a 2B pencil resembling a handheld microphone"
+  />
+  <h1>Salutations!</h1>
+  <p>
+    Joey Nasser is a driven voice actor, writer, and illustrator. He's put his
+    skills to the test for a wide variety of clients including Titmouse,
+    Cengage, and the GameGrumps. He's provided spirited voice work for numerous
+    animated shows, both in-studio and from his home studio. He's even been
+    personally trained by Annie-nominated voice actor Richard Horvitz!
+  </p>
+  <p>
+    When he's not doing silly voices, writing, or drawing, Joey enjoys
+    beat-boxing in front of live audiences, playing too many video games, and
+    apparently speaking in the third person.
+  </p>
 </Layout>
+
+<style>
+  h1 {
+    font-size: 26px;
+    color: #111;
+  }
+
+  h1,
+  p {
+    margin: 1em 0;
+  }
+</style>
